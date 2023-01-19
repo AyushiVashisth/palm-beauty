@@ -1,11 +1,11 @@
 import './App.css';
-import Navbar from './Components/Navbar';
-import Navbar2 from "./Components/Navbar2"
+import LandingPage from './Components/LandingPage';
 
 function App() {
   return (
     <div className="App">
-    <Navbar2/>  
+    <div><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+    <LandingPage/>
     </div>
   );
 }
