@@ -1,6 +1,6 @@
 import { Box, Image, Link, Text,Grid, GridItem } from "@chakra-ui/react";
 import React from "react";
-import { flashSale, topSellingProducts,topSlidingImage } from "./Constants";
+import { bestSellers, flashSale, freeGift, republicDay, topSellingProducts,topSlidingImage } from "./Constants";
 import FirstOneSlindingProducts from "./FirstOneSlindingProducts";
 import FlashSaleProduct from "./FlashSaleProduct";
 import LiveProduct from "./LiveProducts";
@@ -126,11 +126,41 @@ const AddProductLanding = () => {
               VIEW ALL
             </Link>
         </Box>
-        <ProductsCard something={topSellingProducts} />
+        <ProductsCard something={bestSellers} />
       </Box>
-      
 
+       
+      {/* ------------------------------- Poster -----------------------------*/}
+      <Box  >
+        <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1674026919_reminder-elite-1280x100.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
+        
+        <Box width={"90%"} margin={"auto"}>
+        <Grid templateColumns="repeat(2, 1fr)" gap={0}>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:w-640,ar-320-229,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1674046022_slicebannerweb_01-1.gif"} />
+          </GridItem>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:w-640,ar-320-229,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1674046021_slicebannerweb_02-1.gif"} />
+          </GridItem>
+        </Grid>
+        </Box>
+        <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1673939614_get-free-gifts-web.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
 
+        <LiveProduct something={freeGift} />
+
+        <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1673939275_republic-day-special-looksapp.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
+
+        <LiveProduct something={republicDay} />
+
+        <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1673945734_discover-all-product-web.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
+
+        <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2/mediafiles/ecomm/misc/1639028230_alert-strip-web.jpg"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
+
+        <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2/mediafiles/ecomm/misc/1662556480_benefit-icons-strip-web.jpg"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
+
+        
+        
+      </Box>
     </Box>  
   );
 };
