@@ -77,7 +77,7 @@ const ProductsCard = ({ something, prodVal = 5 }) => {
         responsive={responsive}
         ssr={true} // means to render carousel on server-side.
         infinite={true}
-        autoPlaySpeed={3000}
+        autoPlay={100}
         keyBoardControl={true}
         customTransition="300ms"
         transitionDuration={300}
@@ -101,7 +101,47 @@ const ProductsCard = ({ something, prodVal = 5 }) => {
             cursor="pointer"
             marginTop={"0px"}
           >
+          <Box position= {"relative"}>
             <Image h={"204px"} w={"700px"} textAlign={"center"} justifyContent={"center"} src={e.img} />
+            <Box className="overlay overlay-bottom"
+                position={"absolute"}
+                transition={"all 0.3s ease"}
+                opacity= {0}
+                background-color={"blue"}
+                color={"white"}
+                width={"100%"}
+                height={0}
+                bottom= {0}
+                left={0}
+                _hover={{ height: "23%",opacity: "1"}}
+                
+            >
+              <Box 
+                className="text"
+                color= {"black"}
+                display={"flex"}
+                background-color={"blue"}
+                margin-left={"1rem"}
+
+                top= {"1rem"}
+                gap={"35px"}
+                position={"absolute"}
+                translate={"translate(-50%, -50%)"}
+              >
+                <Box 
+                  className="wishlist"
+                  padding= {"5px 4rem"}
+                  background-color={"blue"}
+                color={"black"}
+                  border={"0.5px solid grey"}
+                  cursor={"pointer"}
+                  font-size= {"12px"}
+                >
+                  Add Card
+                </Box>
+              </Box>
+            </Box>
+            </Box>
             <Box>
               <Text fontSize={"15px"}>{e.name}</Text>
               <Text fontSize={"13px"}>{e.qty}</Text>
