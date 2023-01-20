@@ -1,43 +1,4 @@
  
-  export const health = [
-    {
-      title: "Diabetes Care",
-      img: "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/c2a0598f-483c-48ff-9783-71e402aa28d3.png",
-    },
-    {
-      title: "Cardiac Care",
-      img: "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/ab1da5f4-c074-47d2-b278-a5fbd2c93f1f.png",
-    },
-    {
-      title: "Stomach Care",
-      img: "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/18e90e64-9e8c-47c5-ae33-508903429450.png",
-    },
-    {
-      title: "Livar Care",
-      img: "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/14f0bebe-6220-4ac7-b4bb-c5b425975af3.png",
-    },
-    {
-      title: "Kidney Care",
-      img: "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/555f6a24-3e20-41ee-a03b-e3dbda183392.png",
-    },
-    {
-      title: " Bone Joints Muscles Care",
-      img: "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/ba975795-98dc-4cd8-8b55-3c20230d70e3.png",
-    },
-    {
-      title: "Respiratory Care",
-      img: "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/4a788b46-97f3-460e-afb6-428368f779ee.png",
-    },
-    {
-      title: "Pain Relief",
-      img: "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/5fa692ad-6647-4db5-9cb4-eb0bd9111331.png",
-    },
-    {
-      title: "Eye Care",
-      img: "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/631e3dca-3d5b-49f8-832b-8341ec4784e7.png",
-    },
-  ];
-  
   export const topSlidingImage = [
     {
       img: "https://media6.ppl-media.com/tr:w-457,ar-300-431,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1674045525_199-store-live-with-time.gif",
@@ -375,5 +336,77 @@
       img: "https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1673971993_love-beauty-planet-600x900.jpeg"
     },
   ]
+
+  export const bestPriceOnTheInternet =[
+      {
+        img: "https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,oi-purplle_exclusive_base_1__1__BytKq6D4b.png,ofo-top_right,dpr-2/static/img/product/267303/good-vibes-radiant-glow-face-serum-rose-hip-10-ml-1_9_display_1622726784_d6d13626.jpg",
+        name: "Good Vibes Rosehip",
+        strikePrice: "240",
+        discount: "35% off",
+        price: "156",
+      },
+      {
+        img: "https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,dpr-2/static/img/product/257935/good-vibes-radiant-glow-face-serum-rose-hip-30-ml-2_2_display_1670245730_4b883b48.jpg",
+        name: "Good Vibes Rosehip Radient Flow Face",
+        strikePrice: "475",
+        discount: "35% off",
+        price: "309",
+      },
+      {
+        img: "https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,dpr-2/static/img/product/294273/good-vibes-vitamin-c-and-b3-skin-glow-face-serum-10-ml_10_display_1629869821_c63a7bdf.jpg",
+        strikePrice: "250",
+        discount: "35% off",
+        price: "163",
+      },
+      {
+        img: "https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,dpr-2/static/img/product/269644/1-percentage-hyaluronic-sunscreen-aqua-ultra-light-gel-with-spf-50-pa-for-broad-spectrum-uv-a-uv-b-and-blue-light-protection-50g_1_display_1653126903_d20570c1.jpg",
+        name: "The Derma Co.1% Hyaluronic Sunscreem",
+        strikePrice: "499",
+        discount: "10% off",
+        price: "449",
+      },
+      {
+        img: "https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,dpr-2/static/img/product/275520/good-vibes-age-defying-serum-vitamin-c-and-vitamin-e-10-ml-2_12_display_1623302913_996e1220.jpg",
+        name: "Good Vibes Vitamin C & E Age Defying Face",
+        strikePrice: "250",
+        discount: "35% off",
+        price: "163",
+      },
+      {
+        img: "https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,oi-purplle_exclusive_base_1__1__BytKq6D4b.png,ofo-top_right,dpr-2/static/img/product/286990/good-vibes-brightening-face-wash-papaya-120-ml-17_1_display_1673513840_0d7a7659.jpg",
+        name: "Good Vibes Papaya Brightening Face Wash",
+        strikePrice: "215",
+        discount: "35% off",
+        price: "140",
+      },
+      {
+        img: "https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,dpr-2/static/img/product/279266/alps-goodness-powder-beetroot-50-g-91_12_display_1668068350_65b12a0f.jpg",
+        name: "Alps Goodness Power - Beetroot (50 g)",
+        strikePrice: "90",
+        discount: "4% off",
+        price: "86",
+      },
+      {
+        img: "https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,dpr-2/static/img/product/227669/the-derma-co-2-percentage-salicylic-acid-serum-for-acne-and-acne-marks_1_display_1653126898_97a0b3ee.jpg",
+        name: "The Derma co.2% Salicylic Acid Face",
+        strikePrice: "499",
+        discount: "10% off",
+        price: "449",
+      },
+      {
+        img: "https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,dpr-2/static/img/product/274479/alps-goodness-sandalwood-powder-17_12_display_1667385011_0b0cb210.jpg",
+        name: "Alps Goodness Power - Sandalwood (50 g)",
+        strikePrice: "100",
+        discount: "5% off",
+        price: "95",
+      },
+      {
+        img: "https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,dpr-2/static/img/product/328812/alps-goodness-fenugreek-biotin-and-redensyl-anti-hairfall-shampoo-for-all-hair-types-290-ml-sulphate-free-silicone-free-paraben-free-gentle-and-mild-cleansing-shampoo-vegan-hairfall-control-shampoo_12_display_1667479015_c97dd293.jpg",
+        name: "Alps Goodness Fenugreek, Biotin",
+        strikePrice: "309",
+        discount: "30% off",
+        price: "216",
+      },
+  ];
   
   

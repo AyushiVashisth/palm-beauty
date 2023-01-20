@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 import AddProductLanding from './HomeComponents/AddProductLanding'
 import Navbar from './Navbar'
 
@@ -7,6 +8,7 @@ const LandingPage = () => {
     <div>
       <Navbar/>
       <AddProductLanding/>
+      <Footer/>
     </div>
   )
 }

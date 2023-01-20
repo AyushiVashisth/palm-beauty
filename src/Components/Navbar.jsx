@@ -1,7 +1,6 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart} from "@fortawesome/free-solid-svg-icons"
 import { faSmileBeam } from "@fortawesome/free-regular-svg-icons";
-// import {faMenu}
 import {
   Box,
   Flex,
@@ -19,6 +18,12 @@ import {
   VStack,
   Grid,
   GridItem,
+  Menu,
+  MenuItem,
+  MenuList,
+  MenuDivider,
+  MenuButton,
+  Button
 } from "@chakra-ui/react";
 
 import img from "../Images/palm.png"
@@ -29,12 +34,31 @@ import {
   Search2Icon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { useEffect, useState } from "react";
+import ModalSignUp from "./ModalSignUp";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const [navColor, setnavColor] = useState("transparent");
+   const listenScrollEvent = () => {
+     window.scrollY > 15 ? setnavColor("#FFFFFF") : setnavColor("transparent");
+   };
+   useEffect(() => {
+     window.addEventListener("scroll", listenScrollEvent);
+     return () => {
+       window.removeEventListener("scroll", listenScrollEvent);
+     };
+   }, []);
+
+  const {
+    isOpen:isOpenProducts,
+    onOpen:onOpenProducts,
+    onClose:onCloseProducts,
+  } = useDisclosure(); 
+  // <Button width={"95%"} bg={"blue"} color={"white"}>Sign in</Button>
 
   return (
-    <Box>
+    <Box position={"fixed"}>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -95,8 +119,47 @@ export default function Navbar() {
 
         >
         <Search2Icon/>
-          <FontAwesomeIcon icon={faHeart}/>
           <FontAwesomeIcon icon={faSmileBeam}/>
+          <Box   
+          >
+              <Menu isOpen={isOpenProducts}>
+              <MenuButton
+                  transition="all 0.2s"
+                  _hover={{ color: "purple.400" }}
+                  fontWeight={"500"}
+                  aria-label="Courses"
+                  onMouseEnter={onOpenProducts}
+                  onMouseLeave={onCloseProducts}
+                >
+                <FontAwesomeIcon
+                icon={faHeart}
+              />
+                </MenuButton>
+                <MenuList
+                  direction={"row"}
+                  alignItems={"center"}
+                  marginLeft={"90px"}
+                  width={"30%"}
+                  fontSize={"16px"}
+                  onMouseEnter={onOpenProducts}
+                  onMouseLeave={onCloseProducts}
+                >
+                  
+                  <ModalSignUp/>
+                  <MenuItem marginBottom={"10px"}>New Customer?<Link color={"red"} to="">Start here</Link></MenuItem>
+                  <hr/>
+                  <MenuItem _hover={{color:"purple"}} marginTop={"10px"}>Your Orders</MenuItem>
+                  <MenuItem _hover={{color:"purple"}}>Your Account</MenuItem>
+                  <MenuItem _hover={{color:"purple"}}>Elite Mambership</MenuItem>
+                  <MenuItem _hover={{color:"purple"}}>Your Beauty Profile</MenuItem>
+                  <MenuItem _hover={{color:"purple"}}>Your Wishlist</MenuItem>
+                  <MenuItem _hover={{color:"purple"}}>Purplle Credit</MenuItem>
+                  <hr/>
+                  <MenuItem _hover={{color:"purple"}}>Become a Seller?</MenuItem>
+                  <MenuItem><Link color={"red"}>Register Now</Link></MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
         <HamburgerIcon/>      
           
           
@@ -124,8 +187,7 @@ const DesktopNav = () => {
                 fontWeight={"700"}
                 color={linkColor}
                 _hover={{
-                  textDecoration: "none",
-                  color: linkHoverColor,
+                  color: "purple",
                 }}
               >
                 {navItem.label}
@@ -144,7 +206,7 @@ const DesktopNav = () => {
               >
                 <Grid templateColumns="repeat(4, 1fr)" gap={3}>
                   {navItem.children.map((child) => (
-                    <DesktopSubNav fontSize={"14px"} key={child.label} {...child} />
+                    <DesktopSubNav _hover={{color:"purple"}} fontSize={"14px"} key={child.label} {...child} />
                   ))}
                 </Grid>
               </PopoverContent>
@@ -166,7 +228,7 @@ const DesktopSubNav = ({ label, subLabel }) => {
           </Text>
           {subLabel.map((el) => (
             <Text fontSize={"sm"} key={el.id} m={3}>
-              <Link rounded={"md"} _hover={{ bg: "yellow.300" }}>
+              <Link rounded={"md"} _hover={{ color: "purple" }}>
                 {el.key}
               </Link>
             </Text>

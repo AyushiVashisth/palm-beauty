@@ -1,6 +1,6 @@
-import { Box, Image, Link, Text,Grid, GridItem } from "@chakra-ui/react";
+import { Box, Image, Link, Text,Grid, GridItem, Flex } from "@chakra-ui/react";
 import React from "react";
-import { bestSellers, flashSale, freeGift, republicDay, topSellingProducts,topSlidingImage } from "./Constants";
+import { bestPriceOnTheInternet, bestSellers, flashSale, freeGift, republicDay, topSellingProducts,topSlidingImage } from "./Constants";
 import FirstOneSlindingProducts from "./FirstOneSlindingProducts";
 import FlashSaleProduct from "./FlashSaleProduct";
 import LiveProduct from "./LiveProducts";
@@ -130,14 +130,79 @@ const AddProductLanding = () => {
       </Box>
 
        
-      {/* ------------------------------- Poster -----------------------------*/}
+      {/* ------------------------------- Reminder -----------------------------*/}
       <Box  >
-        
-        <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1673939614_get-free-gifts-web.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
-
-        <LiveProduct something={freeGift} />
 
         <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1674026919_reminder-elite-1280x100.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
+
+
+        {/* ------------------------10 Poster -----------------------------*/}
+
+        
+        <Box width={"90%"} margin={"auto"}>
+        <Grid templateColumns="repeat(2, 1fr)" gap={0}>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1674035353_m-a-c-1.jpeg"} />
+          </GridItem>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1674112186_pb-gif-celeb-2.gif?tr=f-gif"} />
+          </GridItem>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1674106765_schwarzkopf-professional.jpeg"} />
+          </GridItem>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1674042630_orange-bg-model-sku.png"} />
+          </GridItem>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1673961015_loreal-720x350.jpeg"} />
+          </GridItem>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1673953609_lotus-herbal-720x350.jpeg"} />
+          </GridItem>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1674141655_mcaffeine-720x350.jpeg"} />
+          </GridItem>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1674028919_blush.gif?tr=f-gif"} />
+          </GridItem>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1673953606_kaja.gif?tr=f-gif"} />
+          </GridItem>
+          <GridItem>
+            <Image src={"https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1674028922_pu-gif-celeb-50.gif?tr=f-gif"} />
+          </GridItem>
+        </Grid>
+        </Box>
+
+        {/* // ------------------------------- Best Prices on The Internet -----------------------------// */}
+
+        <Box mt="2rem" fontFamily="Aqleema- Regular, sans-serif" width={"90%"} margin={"auto"}>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            px="2rem"
+            mb="0.5rem"
+          >
+            <Text fontWeight={"700"} fontSize={"22px"} marginTop={"10px"}>
+              BEST PRICES ON THE INTERNET
+            </Text>
+              <Link
+                color={"darkmagenta"}
+                textDecor={"none"}
+              >
+                VIEW ALL
+              </Link>
+          </Box>
+          <ProductsCard something={bestPriceOnTheInternet} />
+        </Box>
+
+        {/* // ------------------------------- Republic Day Special Looks -----------------------------// */}
+
+        <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1673939275_republic-day-special-looksapp.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
+
+        <LiveProduct something={republicDay} />
+
+        {/* // ------------------------------- Everday Essentials to Bag! All Products on Purplle!-----------------------------// */}
 
         <Box width={"90%"} margin={"auto"}>
         <Grid templateColumns="repeat(2, 1fr)" gap={0}>
@@ -150,9 +215,13 @@ const AddProductLanding = () => {
         </Grid>
         </Box>
 
-        <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1673939275_republic-day-special-looksapp.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
+          {/* // ------------------------------- Get a Free Gift -----------------------------// */}
+        
+        <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1673939614_get-free-gifts-web.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
 
-        <LiveProduct something={republicDay} />
+        <LiveProduct something={freeGift} />
+
+         {/* // ------------------------------- Budget Buy for you -----------------------------// */}    
 
         <Box width={"90%"} margin={"auto"}>
         <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1673943895_budget-buy-for-you-web_17_17.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
@@ -174,9 +243,6 @@ const AddProductLanding = () => {
 
         <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2/mediafiles/ecomm/misc/1620711142_elite-web.png"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
         
-
-        
-       
       {  /* ----------------------Beggest Brand --------*/}
       
         <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1674019675_biggest-brands-on-offer-web.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
@@ -233,7 +299,7 @@ const AddProductLanding = () => {
         </Grid>
       </Box>
         
-
+      {  /* ----------------------Discover all product on purple --------*/}
 
       <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2,f-gif/mediafiles/ecomm/misc/1673945734_discover-all-product-web.gif"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
 
@@ -242,6 +308,25 @@ const AddProductLanding = () => {
         <Image src={"https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2/mediafiles/ecomm/misc/1662556480_benefit-icons-strip-web.jpg"} marginBottom={"40px"} width={"90%"} margin={"auto"}/>
 
         </Box>
+
+        {  /* ----------------------Spotlight Vedio--------*/}
+        <Box width={"100%"} height={"400px"} margin={"auto"} bg={"#e9eced"}>
+        <Text fontWeight={"500"} color={"grey"} fontSize={"30px"} marginTop={"10px"} textAlign={"left"} marginLeft={"100px"}>
+        Spotlight
+      </Text>
+        
+        
+        <Grid templateColumns="repeat(1, 1fr)" templateRows="600px" width={"60%"} margin={"auto"}>
+          <GridItem>
+           
+            <Box marginTop={"30px"} >
+              <iframe width={"100%"} height={"300px"} src="https://www.youtube.com/embed/NrI9d0XiP7M" title="youTube video" allowFullScreen></iframe>
+            </Box>
+          </GridItem>
+        </Grid>
+        </Box> 
+               
+      
   </Box>
   );
 };
