@@ -23,9 +23,16 @@ import {
   MenuList,
   MenuDivider,
   MenuButton,
-  Button
+  Button,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  Radio,
+  RadioGroup,
 } from "@chakra-ui/react";
-
+// import "./Navbar.css"
 import img from "../Images/palm.png"
 
 import {
@@ -34,8 +41,10 @@ import {
   Search2Icon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import { useEffect, useState } from "react";
-import ModalSignUp from "./ModalSignUp";
+import React,{ useEffect, useState } from "react";
+import ModalSignUp from "../Pages/ModalSignUp";
+
+var data = require("../database.json");
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -55,10 +64,33 @@ export default function Navbar() {
     onOpen:onOpenProducts,
     onClose:onCloseProducts,
   } = useDisclosure(); 
+
+  
+  const { 
+    isOpen:isOpenSearch,
+    onOpen:onOpenSearch,
+    onClose:onCloseSearch,
+  } = useDisclosure()
+  const [placement, setPlacement] = React.useState('top')
+
+  const [value, setValue] = useState("");
+
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const onSearch = (searchTerm) => {
+    setValue(searchTerm);
+    // our api to fetch the search result
+    console.log("search ", searchTerm);
+  };
+
   // <Button width={"95%"} bg={"blue"} color={"white"}>Sign in</Button>
 
   return (
-    <Box position={"fixed"}>
+    <Box w={"100%"} position={"fixed"}>
+     
+        
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -118,7 +150,58 @@ export default function Navbar() {
           fontSize={"30px"}
 
         >
-        <Search2Icon/>
+        {/*<Link href="/search"><Search2Icon onClick={onOpenSearch}/></Link>*/}
+        <Box display={"none"}>
+        <RadioGroup defaultValue={placement} onChange={setPlacement}>
+        <Stack direction='row' mb='4'>
+          <Radio value='top'>Top</Radio>
+          <Radio value='right'>Right</Radio>
+          <Radio value='bottom'>Bottom</Radio>
+          <Radio value='left'>Left</Radio>
+        </Stack>
+      </RadioGroup>
+      </Box>
+      <Button colorScheme='blue' onClick={onOpenSearch}>
+      <Search2Icon />
+      </Button>
+      <Drawer placement={placement} onClose={onCloseSearch} isOpen={isOpenSearch} >
+        <DrawerOverlay />
+        <DrawerContent>
+        <div className="App" >
+          <div className="search-inner">
+            <input type="text" value={value} onChange={onChange} />
+            <Search2Icon onClick={() => onSearch(value)}/>
+          </div>
+          <DrawerBody>
+          <div className="dropdown">
+            {data
+              .filter((item) => {
+                const searchTerm = value.toUpperCase();
+                const fullName = item.name.toUpperCase();
+
+                return (
+                  searchTerm &&
+                  fullName.startsWith(searchTerm) &&
+                  fullName !== searchTerm
+                );
+              })
+              .slice(0, 10)
+              .map((item) => (
+                <div
+                  onClick={() => onSearch(item.name)}
+                  className="dropdown-row"
+                  key={item.name}
+                >
+                  {item.name}
+                </div>
+              ))}
+          </div>
+       
+          </DrawerBody>
+          </div>
+        </DrawerContent>
+      </Drawer>
+
           <FontAwesomeIcon icon={faSmileBeam}/>
           <Box   
           >
@@ -183,7 +266,7 @@ const DesktopNav = () => {
               <Link
                 p={1}
                 m={4}
-                href={navItem.href ?? "#"}
+                href={navItem.href }
                 fontWeight={"700"}
                 color={linkColor}
                 _hover={{
@@ -224,7 +307,7 @@ const DesktopSubNav = ({ label, subLabel }) => {
       <VStack>
         <GridItem>
           <Text transition={"all .3s ease"} fontWeight={500} p={4}>
-            {label}
+            {label == "ELITE OFFERS" ? <Link href="/offer" >label</Link> : label }
           </Text>
           {subLabel.map((el) => (
             <Text fontSize={"sm"} key={el.id} m={3}>
@@ -350,5 +433,6 @@ const NAV_ITEMS = [
   {
     label: "ELITE OFFERS",
     children: [],
+    href:"/offer"
   },
 ];

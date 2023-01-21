@@ -78,6 +78,9 @@ function FirstOneSlindingProducts() {
     <Box id="container_Client" pt={5}
     width={"85%"}
     margin={"auto"}>
+    <br/>
+    <br/>
+    <br/>
       <Box
         id="main_Client"
         bgPosition={"center"}
