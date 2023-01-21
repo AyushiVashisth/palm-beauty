@@ -1,13 +1,14 @@
-import { Box, Grid, GridItem, Image } from '@chakra-ui/react';
+import { Box, Grid, GridItem, Image,Text } from '@chakra-ui/react';
 import React from 'react';
 import LiveProduct from '../HomeComponents/LiveProducts';
-import Navbar from '../Navbar';
 import OneProductSlinding from './OneProductSlinding';
 import { offerOfTheDay } from './SplurgeConstants';
 
-const SplurgePage= () => (
+const Offer= () => (
   <Box>
-      <Navbar/>
+  <br/>
+  <br/>
+  <br/>
       <Box width={"90%"} margin={"auto"}>
 
         {/*--------------One Product Slinging */}
@@ -108,4 +109,4 @@ const SplurgePage= () => (
   </Box>
 );
 
-export default SplurgePage;
+export default Offer;

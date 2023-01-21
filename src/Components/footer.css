@@ -1,0 +1,166 @@
+.vid-pic {
+  background-color: #f5f6f7;
+  display: flex;
+  height: 350px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.vid {
+  height: 330px;
+  width: 40%;
+}
+.pic {
+  height: 330px;
+  width: 40%;
+}
+.heading {
+  border: 1px solid transparent;
+  height: 50px;
+  width: 100%;
+  color: #2c414c;
+  font-size: 25px;
+  padding: 0px 0px 20px 70px;
+}
+.video {
+  height: 250px;
+  width: 100%;
+  text-align: center;
+}
+.photo {
+  display: flex;
+  height: 225px;
+  width: 400px;
+  margin-left: 13%;
+}
+.img {
+  width: 30%;
+  height: 100%;
+}
+.content-foot {
+  width: 70%;
+  height: 90%;
+  color: white;
+  padding: 15px 15px;
+  background-color: #f48fb1;
+}
+.para-cont {
+  height: 650px;
+  width: 95%;
+  margin: auto;
+  background-color: #f5f6f7;
+}
+.para-cont > div {
+  height: 53px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+.para-cont > div span a {
+  text-decoration: none;
+  margin-left: 10px;
+  color: #6c7c91;
+  margin-right: 10px;
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+.para-cont > div > div p a {
+  text-decoration: none;
+  color: #6c7c91;
+  font-size: 12px;
+}
+.para-cont a:hover {
+  color: deeppink;
+}
+.about {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+}
+.about > div {
+  width: 20%;
+  height: 200px;
+  margin-top: 2%;
+}
+.about > div h4 {
+  line-height: 0px;
+  color: #6c7c91;
+}
+.about > div a {
+  text-decoration: none;
+  color: #6c7c91;
+  font-size: 12px;
+}
+.about > div a:hover {
+  color: deeppink;
+}
+.social {
+  display: flex;
+}
+.social img {
+  height: 26px;
+  width: 300px;
+  margin-top: 4%;
+}
+.fa {
+  padding: 10px;
+  font-size: 15px;
+  width: 12px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  margin-top: 4%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+.connect {
+  color: #6c7c91;
+  margin-left: 5%;
+  margin-right: 8%;
+  text-align: center;
+}
+.payment {
+  color: #6c7c91;
+  margin-left: 8%;
+  margin-right: 8%;
+  text-align: center;
+}

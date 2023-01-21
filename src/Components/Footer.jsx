@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 
 
-
+import './footer.css';
 const ListHeader = ({ children }) => {
   return (
     <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
@@ -26,6 +26,236 @@ const ListHeader = ({ children }) => {
 
 export default function Footer() {
   return (
+    <>
+    <div class="para-cont">
+      <div>
+        <p>
+          <span><a href="#">Makeup:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#">Primer</a>/<a href="#">Lipstick</a>/<a href="#"
+              >Foundation</a
+            >/<a href="#">Eyeshadow</a>/<a href="#">Eyeliner</a>/<a href="#"
+              >Kajal</a
+            >/<a href="#">Concealer</a>/<a href="#">Nail Polish</a>/<a href="#"
+              >Compact</a
+            >/<a href="#">Mascara</a>/<a href="#">Highlighters & illuminators</a
+            >/<a href="#">Makeup Remover</a>/<a href="#">BB & CC Cream</a>/<a
+              href="#"
+              >Lip Balm & Treatment</a
+            >/<a href="#">Eyebrow Enhancer</a>
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span><a href="#">Skin:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#">Face Pack Masks & Peels</a>/<a href="#">
+              Serum & Facial Oils</a
+            >/<a href="#"> Face wash</a>/<a href="#"> Facial Kits</a>/<a
+              href="#"
+            >
+              Face Cream</a
+            >/<a href="#"> Moisturizers</a>/<a href="#"> Toner</a>/<a href="#">
+              Essential & Carrier Oils</a
+            >/<a href="#"> Sheet Masks</a>/<a href="#"> Scrubs & Exfoliators</a
+            >/<a href="#"> Lip Balm & Care</a>/<a href="#"> Sunscreen</a>/<a
+              href="#"
+            >
+              Body Lotions & Moisturizers</a
+            >
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span><a href="#">Hair:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#"> Shampoo</a>/<a href="#"> Conditioner</a>/<a href="#">
+              Hair Serum</a
+            >/<a href="#"> Hair Oil</a>/<a href="#"> Hair Spa & Masque</a>/<a
+              href="#"
+            >
+              Hair Treatment</a
+            >/<a href="#"> Baby Shampoo</a>/<a href="#"> Dry Shampoo</a>/<a
+              href="#"
+            >
+              Hair Spa Kits</a
+            >/<a href="#"> Hair Nourishment Kit</a>/<a href="#"> Hair Color</a
+            >/<a href="#"> Hair Nourishment Kit</a>/<a href="#">
+              Hair Spray & Leave-in cream</a
+            >/<a href="#"> Volumizing</a>
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span><a href="#">Fragrance:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#"> Perfumes</a>/<a href="#"> Deodrants & Roll-ons</a>/<a
+              href="#"
+            >
+              Solid Perfumes</a
+            >/<a href="#"> Aftershaves</a>/<a href="#"> Colognes</a>/<a
+              href="#"
+            >
+              Gift & Value sets for men</a
+            >/<a href="#"> Gift & Value sets for men</a>/<a href="#">
+              Gift & Value sets for women</a
+            >
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span><a href="#">Collections:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#"> Castor Oil</a>/<a href="#"> Pastel Nail Polish</a>/<a
+              href="#"
+            >
+              Lakme 9 to 5</a
+            >/<a href="#"> Black Kajal</a>/<a href="#"> Sunscreen</a>
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span><a href="#">Brands:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#"> Biotique</a>/<a href="#"> Wow</a>/<a href="#">
+              Dermdoc</a
+            >/<a href="#"> Himalaya</a>/<a href="#"> Darling Isabella</a>/<a
+              href="#"
+            >
+              Maybelline</a
+            >/<a href="#"> Loreal</a>/<a href="#"> Good Vibes</a>/<a href="#">
+              NY Bae</a
+            >/<a href="#"> Stay Quirky</a>/<a href="#"> Aroma Magic</a>/<a
+              href="#"
+            >
+              Alps Goodness</a
+            >/<a href="#"> Lotus</a>/<a href="#"> Purplle</a>/<a href="#">
+              Sugar</a
+            >/<a href="#"> Nivea</a>/<a href="#"> Lakme</a>
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span><a href="#">Men:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#">Primer</a>/<a href="#">Lipstick</a>/<a href="#"
+              >Foundation</a
+            >/<a href="#">Eyeshadow</a>/<a href="#">Eyeliner</a>/<a href="#"
+              >Kajal</a
+            >/<a href="#">Concealer</a>/<a href="#">Nail Polish</a>/<a href="#"
+              >Compact</a
+            >/<a href="#">Mascara</a>/<a href="#">Highlighters & illuminators</a
+            >/<a href="#">Makeup Remover</a>/<a href="#">BB & CC Cream</a>/<a
+              href="#"
+              >Lip Balm & Treatment</a
+            >/<a href="#">Eyebrow Enhancer</a>/<a href="#">Loose Powder</a>/<a
+              href="#"
+              >Blush</a
+            >
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span><a href="#">Accessories:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#">Primer</a>/<a href="#">Lipstick</a>/<a href="#"
+              >Foundation</a
+            >/<a href="#">Eyeshadow</a>/<a href="#">Eyeliner</a>/<a href="#"
+              >Kajal</a
+            >/<a href="#">Concealer</a>/<a href="#">Nail Polish</a>/<a href="#"
+              >Compact</a
+            >/<a href="#">Mascara</a>/<a href="#">Highlighters & illuminators</a
+            >/<a href="#">Makeup Remover</a>/<a href="#">BB & CC Cream</a>/<a
+              href="#"
+              >Lip Balm & Treatment</a
+            >/<a href="#">Eyebrow Enhancer</a>
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span><a href="#">Electronics:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#">Primer</a>/<a href="#">Lipstick</a>/<a href="#"
+              >Foundation</a
+            >/<a href="#">Eyeshadow</a>/<a href="#">Eyeliner</a>/<a href="#"
+              >Kajal</a
+            >/<a href="#">Concealer</a>/<a href="#">Nail Polish</a>/<a href="#"
+              >Compact</a
+            >/<a href="#">Mascara</a>/<a href="#">Highlighters & illuminators</a
+            >/<a href="#">Makeup Remover</a>/<a href="#">BB & CC Cream</a>/<a
+              href="#"
+              >Lip Balm & Treatment</a
+            >/<a href="#">Eyebrow Enhancer</a>
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span><a href="#">Wellness:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#">Primer</a>/<a href="#">Lipstick</a>/<a href="#"
+              >Foundation</a
+            >/<a href="#">Eyeshadow</a>/<a href="#">Eyeliner</a>/<a href="#"
+              >Kajal</a
+            >/<a href="#">Concealer</a>/<a href="#">Nail Polish</a>/<a href="#"
+              >Compact</a
+            >/<a href="#">Mascara</a>/<a href="#">Highlighters & illuminators</a
+            >/<a href="#">Makeup Remover</a>/<a href="#">BB & CC Cream</a>/<a
+              href="#"
+              >Lip Balm & Treatment</a
+            >/<a href="#">Eyebrow Enhancer</a>
+          </p>
+        </div>
+      </div>
+      <div>
+        <p>
+          <span><a href="#">Wellness:</a></span>
+        </p>
+        <div>
+          <p>
+            <a href="#">Primer</a>/<a href="#">Lipstick</a>/<a href="#"
+              >Foundation</a
+            >/<a href="#">Eyeshadow</a>/<a href="#">Eyeliner</a>/<a href="#"
+              >Kajal</a
+            >/<a href="#">Concealer</a>/<a href="#">Nail Polish</a>/<a href="#"
+              >Compact</a
+            >/<a href="#">Mascara</a>/<a href="#">Highlighters & illuminators</a
+            >/<a href="#">Makeup Remover</a>/<a href="#">BB & CC Cream</a>/<a
+              href="#"
+              >Lip Balm & Treatment</a
+            >/<a href="#">Eyebrow Enhancer</a>
+          </p>
+        </div>
+      </div>
+      </div>
     <Box  bg={"#e9eced"} width={"90%"}
     margin={"auto"}>
     <Box
@@ -93,7 +323,8 @@ export default function Footer() {
     <SmallWithSocial/>
     
     </Box>
-    
+   
+    </>
   );
 }
   

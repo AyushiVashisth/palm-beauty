@@ -1,11 +1,15 @@
 import './App.css';
-import LandingPage from './Components/LandingPage';
-
+import Footer from './Components/Footer';
+import Navbar from './Components/Navbar';
+import AllRouter from './Pages/AllRouter';
+import AddProductLanding from './Pages/HomeComponents/AddProductLanding';
+//<AddProductLanding/>
 function App() {
   return (
     <div className="App">
-    <div><i class="fa fa-heart-o" aria-hidden="true"></i></div>
-    <LandingPage/>
+    <Navbar/>
+    <AllRouter/>
+    <Footer/>
     </div>
   );
 }
