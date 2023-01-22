@@ -21,16 +21,10 @@ import {
   Menu,
   MenuItem,
   MenuList,
-  MenuDivider,
-  MenuButton,
-  Button,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerHeader,
-  DrawerBody,
-  Radio,
-  RadioGroup,
+  MenuButton, 
+  InputGroup,
+  InputLeftElement,
+  Input
 } from "@chakra-ui/react";
 // import "./Navbar.css"
 import img from "../Images/palm.png"
@@ -41,11 +35,12 @@ import {
   Search2Icon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import React,{ useEffect, useState } from "react";
+import React,{ useContext, useEffect, useState } from "react";
 import ModalSignUp from "../Pages/ModalSignUp";
+import { SearchContext } from "../Context/SearchContext";
+import ModalLogin from "../Pages/ModalLogin";
 
-var data = require("../database.json");
-
+const initial = { search: "" };
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const [navColor, setnavColor] = useState("transparent");
@@ -65,25 +60,19 @@ export default function Navbar() {
     onClose:onCloseProducts,
   } = useDisclosure(); 
 
-  
-  const { 
-    isOpen:isOpenSearch,
-    onOpen:onOpenSearch,
-    onClose:onCloseSearch,
-  } = useDisclosure()
-  const [placement, setPlacement] = React.useState('top')
+  // var data = require("../database.json");
 
-  const [value, setValue] = useState("");
+const [input, setInput] = useState(initial);
+  const { inputQuery } = useContext(SearchContext);
 
-  const onChange = (event) => {
-    setValue(event.target.value);
+  const { value } = input.search;
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInput({ ...input, [name]: value });
+    inputQuery(input.search);
   };
 
-  const onSearch = (searchTerm) => {
-    setValue(searchTerm);
-    // our api to fetch the search result
-    console.log("search ", searchTerm);
-  };
 
   // <Button width={"95%"} bg={"blue"} color={"white"}>Sign in</Button>
 
@@ -128,7 +117,7 @@ export default function Navbar() {
           border="0px solid black"
           spacing={2}
         >
-          <Image
+          <Link href="/"><Image
             src={img}
             alt="asdfas"
             w="130px"
@@ -136,7 +125,7 @@ export default function Navbar() {
             _hover={{
               cursor: "pointer",
             }}
-          />
+          /></Link>
           <Flex display={{ base: "left", md: "flex" }} mt="5px">
             <DesktopNav />
           </Flex>
@@ -151,56 +140,29 @@ export default function Navbar() {
 
         >
         {/*<Link href="/search"><Search2Icon onClick={onOpenSearch}/></Link>*/}
-        <Box display={"none"}>
-        <RadioGroup defaultValue={placement} onChange={setPlacement}>
-        <Stack direction='row' mb='4'>
-          <Radio value='top'>Top</Radio>
-          <Radio value='right'>Right</Radio>
-          <Radio value='bottom'>Bottom</Radio>
-          <Radio value='left'>Left</Radio>
-        </Stack>
-      </RadioGroup>
-      </Box>
-      <Button colorScheme='blue' onClick={onOpenSearch}>
-      <Search2Icon />
-      </Button>
-      <Drawer placement={placement} onClose={onCloseSearch} isOpen={isOpenSearch} >
-        <DrawerOverlay />
-        <DrawerContent>
-        <div className="App" >
-          <div className="search-inner">
-            <input type="text" value={value} onChange={onChange} />
-            <Search2Icon onClick={() => onSearch(value)}/>
-          </div>
-          <DrawerBody>
-          <div className="dropdown">
-            {data
-              .filter((item) => {
-                const searchTerm = value.toUpperCase();
-                const fullName = item.name.toUpperCase();
-
-                return (
-                  searchTerm &&
-                  fullName.startsWith(searchTerm) &&
-                  fullName !== searchTerm
-                );
-              })
-              .slice(0, 10)
-              .map((item) => (
-                <div
-                  onClick={() => onSearch(item.name)}
-                  className="dropdown-row"
-                  key={item.name}
-                >
-                  {item.name}
-                </div>
-              ))}
-          </div>
-       
-          </DrawerBody>
-          </div>
-        </DrawerContent>
-      </Drawer>
+        <InputGroup w="35%" variant="filled" size={"md"} color={"gray.600"}>
+            <Link href="/search">
+              <InputLeftElement
+                pl={5}
+                pointerEvents="change"
+                children={<Search2Icon color="gray.600" />}
+              />
+            </Link>
+            <Input
+              ml={2}
+              px={9}
+              type="text"
+              name="search"
+              value={value}
+              onChange={handleChange}
+   
+              focusBorderColor="lightcoral"
+              placeholder="Search here"
+              color={"gray.600"}
+              fontWeight={400}
+            />
+          </InputGroup>
+          
 
           <FontAwesomeIcon icon={faSmileBeam}/>
           <Box   
@@ -228,8 +190,8 @@ export default function Navbar() {
                   onMouseLeave={onCloseProducts}
                 >
                   
-                  <ModalSignUp/>
-                  <MenuItem marginBottom={"10px"}>New Customer?<Link color={"red"} to="">Start here</Link></MenuItem>
+                  <ModalLogin/>
+                  <MenuItem marginBottom={"10px"}>New Customer?<Link color={"red"} to=""><ModalSignUp/></Link></MenuItem>
                   <hr/>
                   <MenuItem _hover={{color:"purple"}} marginTop={"10px"}>Your Orders</MenuItem>
                   <MenuItem _hover={{color:"purple"}}>Your Account</MenuItem>
