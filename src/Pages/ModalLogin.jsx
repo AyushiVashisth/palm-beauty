@@ -1,4 +1,6 @@
-import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure, ModalFooter } from "@chakra-ui/react"
+
+
+import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure, ModalFooter, useToast } from "@chakra-ui/react"
 import {
     Box,
     Flex,
@@ -13,6 +15,8 @@ import {
     HStack,
     InputGroup,
     InputLeftAddon,
+    Wrap,
+    WrapItem
   } from "@chakra-ui/react";
   import {EmailIcon}from "@chakra-ui/icons";
   import { Link } from "react-router-dom";
@@ -21,6 +25,11 @@ import ModalSignIn from "./ModalSignUp";
 
 export default function ModalLogin() {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    
+    const toast = useToast()
+    const positions = [
+      'top'
+    ]
   
     return (
       <>
@@ -87,7 +96,35 @@ export default function ModalLogin() {
                   placeholder="Enter Phone Number"
                 />
               </InputGroup>
-                <ModalSignIn/>
+              <Wrap w={"100%"}>
+              {positions.map((position, i) => (
+                <WrapItem key={i} w={"100%"} >
+                  <Button
+                  w={"90%"}
+                  fontFamily={"heading"}
+                  mt={8}
+                  mx={"center"}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  bgGradient="linear(to-r, red.400,blue.400)"
+                  color={"white"}
+                  fontSize={"xl"}
+                  _hover={{
+                    bgGradient: "linear(to-r, red.400,blue.400)"
+                  }} 
+                    onClick={() =>
+                      toast({
+                        title: `Login Successful`,
+                        position: position,
+                        isClosable: true,
+                      })
+                    }
+                  >
+                   Login
+                  </Button>
+                </WrapItem>
+              ))}
+            </Wrap>
               <Flex
                 align={"center"}
                 _before={{

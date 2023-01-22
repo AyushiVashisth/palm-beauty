@@ -36,7 +36,8 @@ export default function ModalSignIn() {
   
     return (
       <>
-        <Button w={"full"}
+        <Button
+         w={"full"}
         fontFamily={"heading"}
         mt={8}
         mx={"center"}
@@ -48,7 +49,7 @@ export default function ModalSignIn() {
         _hover={{
           bgGradient: "linear(to-r, red.400,blue.400)"
         }} 
-        onClick={onOpen}>Login</Button>
+        onClick={onOpen}>SignIn</Button>
   
         <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
@@ -140,23 +141,8 @@ export default function ModalSignIn() {
                     </InputGroup>
                   </FormControl>
                   <Stack spacing={10} pt={2}>
-                    <Button
-                      w={"full"}
-                      fontFamily={"heading"}
-                      mt={8}
-                      mx={"center"}
-                      justifyContent={"center"}
-                      alignItems={"center"}
-                      bgGradient="linear(to-r, red.400,blue.400)"
-                      color={"white"}
-                      fontSize={"xl"}
-                      _hover={{
-                        bgGradient: "linear(to-r, red.400,blue.400)",
-                        boxShadow: "xl",
-                      }}
-                    >
-                      Sign Up
-                    </Button>
+                  
+                      <ModalLogin/>
                   </Stack>
                   <HStack justifyContent={"center"} alignItems={"center"} fontSize={"lg"}>
                     <Text align={"center"}>
