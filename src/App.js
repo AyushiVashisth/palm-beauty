@@ -8,10 +8,10 @@ import Single from './Single';
 function App() {
   return (
     <div className="App">
-   {/* <Navbar/>
+    <Navbar/>
     <AllRouter/>
-  <Footer/>*/}
-  <Single/>
+  <Footer/>
+  {/*<Single/>*/}
     </div>
   );
 }
