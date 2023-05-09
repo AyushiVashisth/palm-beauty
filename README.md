@@ -63,7 +63,7 @@ Purple is a company that provides comfort and wellness products such as mattress
 
 [![Screenshot-2023-05-09-171312.png](https://i.postimg.cc/sxk8KSgM/Screenshot-2023-05-09-171312.png)](https://postimg.cc/H8tBkr5m)
 
-[url=https://postimg.cc/Z0FW5893][img]https://i.postimg.cc/Z0FW5893/Screenshot-2023-05-09-171349.png[/img][/url]
+[![Screenshot-2023-05-09-171312.png](https://i.postimg.cc/Z0FW5893/Screenshot-2023-05-09-171349.png)](https://postimg.cc/H8tBkr5m)
 
 [![Screenshot-2023-05-09-171427.png](https://i.postimg.cc/G2GKxf61/Screenshot-2023-05-09-171427.png)](https://postimg.cc/YG2QpdpX)
 
