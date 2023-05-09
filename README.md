@@ -57,7 +57,10 @@ Purple is a company that provides comfort and wellness products such as mattress
 # Features
 
 - Account creation, login, signup and logout functionality.
-- Sign-up and log-in validations.
+- Product Sorting Based on Price
+- Product Filtering and Sorting work together 
+- Products Pagination (Default 12 Products Per Page)
+- deploy api
 
 [![Screenshot-2023-05-09-171259.png](https://i.postimg.cc/PfVdYFb7/Screenshot-2023-05-09-171259.png)](https://postimg.cc/146xZBj0)
 
