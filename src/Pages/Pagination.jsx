@@ -1,5 +1,4 @@
 import { Button, Flex, Stack, Tooltip } from "@chakra-ui/react";
-// import {} from "chakra-paginator"
 export default function Pagination({ page, handlePage, totalPage }) {
   return (
     <Flex

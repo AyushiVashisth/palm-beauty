@@ -1,6 +1,6 @@
-import { Box, Image, Text,Flex,Button } from "@chakra-ui/react";
-import React,{useState,useEffect} from "react";
-import { ChevronLeftIcon,ChevronRightIcon } from "@chakra-ui/icons";
+import { Box, Image, Text, Flex, Button } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 const ProductsCard = ({ something, prodVal = 5 }) => {
@@ -21,56 +21,59 @@ const ProductsCard = ({ something, prodVal = 5 }) => {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
-  
+
   const [imageState, setImageState] = useState(0);
-    const [imageSrc, setImageSrc] = useState(something[imageState].image);
-    const [crauserDesignation, setCrauserDesignation] = useState(
-      something[imageState].designation
-    );
+  const [imageSrc, setImageSrc] = useState(something[imageState].image);
+  const [crauserDesignation, setCrauserDesignation] = useState(
+    something[imageState].designation
+  );
 
-    const rightClick = () =>{
-      
-      if (imageState == something.length-1) {
+  const rightClick = () => {
+    if (imageState === something.length - 1) {
+      setImageState(0);
+    } else {
+      setImageState(imageState + 1);
+    }
+  };
+  const leftClick = () => {
+    if (imageState === 0) {
+      setImageState(something.length - 1);
+    } else {
+      setImageState(imageState - 1);
+    }
+  };
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      console.log(imageState);
+      if (imageState === something.length - 1) {
         setImageState(0);
-      }else{
-         setImageState(imageState + 1);
+      } else {
+        setImageState(imageState + 1);
       }
-     
-    }
-    const leftClick = ()=> {
-      if (imageState == 0) {
-        setImageState(something.length - 1);
-      }else{
-          setImageState(imageState - 1);
-      }
-    }
+    }, 1000);
+    return () => {
+      clearInterval(id);
+    };
+  }, [{ imageState }]);
 
-   useEffect(() => {
-     const id = setInterval(() => {
-       console.log(imageState);
-       if (imageState == something.length - 1) {
-         setImageState(0);
-       } else {
-         setImageState(imageState + 1);
-       }
-     }, 1000);
-     return () => {
-       clearInterval(id);
-     };
-   }, [{imageState}]);
+  useEffect(() => {
+    setImageSrc(something[imageState].image);
 
-    useEffect(()=>{
-          setImageSrc(something[imageState].image);
-         
-          setCrauserDesignation(something[imageState].designation);
-    },[{imageState}])
+    setCrauserDesignation(something[imageState].designation);
+  }, [{ imageState }]);
 
-  console.log(imageState)
+  console.log(imageState);
 
   return (
-    <Box bg="white" p="1rem" id="main_Client"
-    bgPosition={"center"}
-    bgRepeat={"no-repeat"}>
+    <Box
+      bg="white"
+      p="1rem"
+      id="main_Client"
+      bgPosition={"center"}
+      bgRepeat={"no-repeat"}
+      zIndex={-1000}
+    >
       <Carousel
         swipeable={true}
         draggable={true}
@@ -97,46 +100,51 @@ const ProductsCard = ({ something, prodVal = 5 }) => {
             cursor="pointer"
             marginTop={"0px"}
           >
-          <Box position= {"relative"}>
-            <Image h={"204px"} w={"700px"} textAlign={"center"} justifyContent={"center"} src={e.img} />
-            <Box className="overlay overlay-bottom"
+            <Box position={"relative"}>
+              <Image
+                h={"204px"}
+                w={"700px"}
+                textAlign={"center"}
+                justifyContent={"center"}
+                src={e.img}
+              />
+              <Box
+                className="overlay overlay-bottom"
                 position={"absolute"}
                 transition={"all 0.3s ease"}
-                opacity= {0}
+                opacity={0}
                 background-color={"blue"}
                 color={"white"}
                 width={"100%"}
                 height={0}
-                bottom= {0}
+                bottom={0}
                 left={0}
-                _hover={{ height: "23%",opacity: "1"}}
-                
-            >
-              <Box 
-                className="text"
-                color= {"black"}
-                display={"flex"}
-                background-color={"blue"}
-                margin-left={"1rem"}
-
-                top= {"1rem"}
-                gap={"35px"}
-                position={"absolute"}
-                translate={"translate(-50%, -50%)"}
+                _hover={{ height: "23%", opacity: "1" }}
               >
-                <Box 
-                  className="wishlist"
-                  padding= {"5px 4rem"}
+                <Box
+                  className="text"
+                  color={"black"}
+                  display={"flex"}
                   background-color={"blue"}
-                color={"black"}
-                  border={"0.5px solid grey"}
-                  cursor={"pointer"}
-                  font-size= {"12px"}
+                  margin-left={"1rem"}
+                  top={"1rem"}
+                  gap={"35px"}
+                  position={"absolute"}
+                  translate={"translate(-50%, -50%)"}
                 >
-                  Add Card
+                  <Box
+                    className="wishlist"
+                    padding={"5px 4rem"}
+                    background-color={"blue"}
+                    color={"black"}
+                    border={"0.5px solid grey"}
+                    cursor={"pointer"}
+                    font-size={"12px"}
+                  >
+                    Add Card
+                  </Box>
                 </Box>
               </Box>
-            </Box>
             </Box>
             <Box>
               <Text fontSize={"15px"}>{e.name}</Text>
@@ -154,12 +162,30 @@ const ProductsCard = ({ something, prodVal = 5 }) => {
             </Box>
           </Box>
         ))}
-        <Flex mb={5}>
-          <Button id="left-btn" onClick={leftClick} bg={"transparent"} >
-            <ChevronLeftIcon boxSize={10} marginBottom={"320px"} marginLeft={"50px"}/>
+        <Flex mb={5} zIndex={-1000}>
+          <Button
+            zIndex={-1000}
+            id="left-btn"
+            onClick={leftClick}
+            bg={"transparent"}
+          >
+            <ChevronLeftIcon
+              boxSize={10}
+              marginBottom={"320px"}
+              marginLeft={"50px"}
+            />
           </Button>
-          <Button id="right-btn" onClick={rightClick} bg={"transparent"}>
-            <ChevronRightIcon boxSize={10} marginBottom={"320px"} marginLeft={"120px"}/>
+          <Button
+            zIndex={-1000}
+            id="right-btn"
+            onClick={rightClick}
+            bg={"transparent"}
+          >
+            <ChevronRightIcon
+              boxSize={10}
+              marginBottom={"320px"}
+              marginLeft={"120px"}
+            />
           </Button>
         </Flex>
       </Carousel>

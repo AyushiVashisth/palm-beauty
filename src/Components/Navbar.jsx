@@ -1,5 +1,5 @@
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHeart} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faSmileBeam } from "@fortawesome/free-regular-svg-icons";
 import {
   Box,
@@ -21,13 +21,12 @@ import {
   Menu,
   MenuItem,
   MenuList,
-  MenuButton, 
+  MenuButton,
   InputGroup,
   InputLeftElement,
-  Input
+  Input,
 } from "@chakra-ui/react";
-// import "./Navbar.css"
-import img from "../Images/palm.png"
+import img from "../Images/palm.png";
 
 import {
   HamburgerIcon,
@@ -35,7 +34,7 @@ import {
   Search2Icon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import React,{ useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ModalSignUp from "../Pages/ModalSignUp";
 import { SearchContext } from "../Context/SearchContext";
 import ModalLogin from "../Pages/ModalLogin";
@@ -44,25 +43,23 @@ const initial = { search: "" };
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const [navColor, setnavColor] = useState("transparent");
-   const listenScrollEvent = () => {
-     window.scrollY > 15 ? setnavColor("#FFFFFF") : setnavColor("transparent");
-   };
-   useEffect(() => {
-     window.addEventListener("scroll", listenScrollEvent);
-     return () => {
-       window.removeEventListener("scroll", listenScrollEvent);
-     };
-   }, []);
+  const listenScrollEvent = () => {
+    window.scrollY > 15 ? setnavColor("#FFFFFF") : setnavColor("transparent");
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent);
+    return () => {
+      window.removeEventListener("scroll", listenScrollEvent);
+    };
+  }, []);
 
   const {
-    isOpen:isOpenProducts,
-    onOpen:onOpenProducts,
-    onClose:onCloseProducts,
-  } = useDisclosure(); 
+    isOpen: isOpenProducts,
+    onOpen: onOpenProducts,
+    onClose: onCloseProducts,
+  } = useDisclosure();
 
-  // var data = require("../database.json");
-
-const [input, setInput] = useState(initial);
+  const [input, setInput] = useState(initial);
   const { inputQuery } = useContext(SearchContext);
 
   const { value } = input.search;
@@ -72,14 +69,8 @@ const [input, setInput] = useState(initial);
     setInput({ ...input, [name]: value });
     inputQuery(input.search);
   };
-
-
-  // <Button width={"95%"} bg={"blue"} color={"white"}>Sign in</Button>
-
   return (
-    <Box w={"100%"} position={"fixed"}>
-     
-        
+    <Box w={"100%"} position={"fixed"} top={0} zIndex={1000} bg={"white"}>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -93,7 +84,7 @@ const [input, setInput] = useState(initial);
         align={"center"}
         fontFamily="Aqleema- Regular, sans-serif"
         fontSize={"15px"}
-        lineHeight={"20px"}     
+        lineHeight={"20px"}
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -117,15 +108,17 @@ const [input, setInput] = useState(initial);
           border="0px solid black"
           spacing={2}
         >
-          <Link href="/"><Image
-            src={img}
-            alt="asdfas"
-            w="130px"
-            h={"40px"}
-            _hover={{
-              cursor: "pointer",
-            }}
-          /></Link>
+          <Link href="/">
+            <Image
+              src={img}
+              alt="asdfas"
+              w="130px"
+              h={"40px"}
+              _hover={{
+                cursor: "pointer",
+              }}
+            />
+          </Link>
           <Flex display={{ base: "left", md: "flex" }} mt="5px">
             <DesktopNav />
           </Flex>
@@ -137,10 +130,8 @@ const [input, setInput] = useState(initial);
           direction={"row"}
           spacing={4}
           fontSize={"30px"}
-
         >
-        {/*<Link href="/search"><Search2Icon onClick={onOpenSearch}/></Link>*/}
-        <InputGroup w="35%" variant="filled" size={"md"} color={"gray.600"}>
+          <InputGroup w="35%" variant="filled" size={"md"} color={"gray.600"}>
             <Link href="/search">
               <InputLeftElement
                 pl={5}
@@ -155,59 +146,66 @@ const [input, setInput] = useState(initial);
               name="search"
               value={value}
               onChange={handleChange}
-   
               focusBorderColor="lightcoral"
               placeholder="Search here"
               color={"gray.600"}
               fontWeight={400}
             />
           </InputGroup>
-          
 
-          <FontAwesomeIcon icon={faSmileBeam}/>
-          <Box   
-          >
-              <Menu isOpen={isOpenProducts}>
+          <FontAwesomeIcon icon={faSmileBeam} />
+          <Box>
+            <Menu isOpen={isOpenProducts}>
               <MenuButton
-                  transition="all 0.2s"
-                  _hover={{ color: "purple.400" }}
-                  fontWeight={"500"}
-                  aria-label="Courses"
-                  onMouseEnter={onOpenProducts}
-                  onMouseLeave={onCloseProducts}
-                >
-                <FontAwesomeIcon
-                icon={faHeart}
-              />
-                </MenuButton>
-                <MenuList
-                  direction={"row"}
-                  alignItems={"center"}
-                  marginLeft={"90px"}
-                  width={"30%"}
-                  fontSize={"16px"}
-                  onMouseEnter={onOpenProducts}
-                  onMouseLeave={onCloseProducts}
-                >
-                  
-                  <ModalLogin/>
-                  <MenuItem marginBottom={"10px"}>New Customer?<Link color={"red"} to=""><ModalSignUp/></Link></MenuItem>
-                  <hr/>
-                  <MenuItem _hover={{color:"purple"}} marginTop={"10px"}>Your Orders</MenuItem>
-                  <MenuItem _hover={{color:"purple"}}>Your Account</MenuItem>
-                  <MenuItem _hover={{color:"purple"}}>Elite Mambership</MenuItem>
-                  <MenuItem _hover={{color:"purple"}}>Your Beauty Profile</MenuItem>
-                  <MenuItem _hover={{color:"purple"}}>Your Wishlist</MenuItem>
-                  <MenuItem _hover={{color:"purple"}}>Purplle Credit</MenuItem>
-                  <hr/>
-                  <MenuItem _hover={{color:"purple"}}>Become a Seller?</MenuItem>
-                  <MenuItem><Link color={"red"}>Register Now</Link></MenuItem>
-                </MenuList>
-              </Menu>
-            </Box>
-        <HamburgerIcon/>      
-          
-          
+                transition="all 0.2s"
+                _hover={{ color: "purple.400" }}
+                fontWeight={"500"}
+                aria-label="Courses"
+                onMouseEnter={onOpenProducts}
+                onMouseLeave={onCloseProducts}
+              >
+                <FontAwesomeIcon icon={faHeart} />
+              </MenuButton>
+              <MenuList
+                direction={"row"}
+                alignItems={"center"}
+                marginLeft={"90px"}
+                width={"30%"}
+                fontSize={"16px"}
+                onMouseEnter={onOpenProducts}
+                onMouseLeave={onCloseProducts}
+              >
+                <ModalLogin />
+                <MenuItem marginBottom={"10px"}>
+                  New Customer?
+                  <Link color={"red"} to="">
+                    <ModalSignUp />
+                  </Link>
+                </MenuItem>
+                <hr />
+                <MenuItem _hover={{ color: "purple" }} marginTop={"10px"}>
+                  Your Orders
+                </MenuItem>
+                <MenuItem _hover={{ color: "purple" }}>Your Account</MenuItem>
+                <MenuItem _hover={{ color: "purple" }}>
+                  Elite Mambership
+                </MenuItem>
+                <MenuItem _hover={{ color: "purple" }}>
+                  Your Beauty Profile
+                </MenuItem>
+                <MenuItem _hover={{ color: "purple" }}>Your Wishlist</MenuItem>
+                <MenuItem _hover={{ color: "purple" }}>Purplle Credit</MenuItem>
+                <hr />
+                <MenuItem _hover={{ color: "purple" }}>
+                  Become a Seller?
+                </MenuItem>
+                <MenuItem>
+                  <Link color={"red"}>Register Now</Link>
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Box>
+          <HamburgerIcon />
         </Stack>
       </Flex>
     </Box>
@@ -216,19 +214,18 @@ const [input, setInput] = useState(initial);
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
     <Stack direction={"row"} ml={10} spacing={2}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label} >
+        <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
                 p={1}
                 m={4}
-                href={navItem.href }
+                href={navItem.href}
                 fontWeight={"700"}
                 color={linkColor}
                 _hover={{
@@ -247,11 +244,16 @@ const DesktopNav = () => {
                 p={3}
                 rounded={"xl"}
                 minW={"300%"}
-                 fontSize={"14px"}
+                fontSize={"14px"}
               >
                 <Grid templateColumns="repeat(4, 1fr)" gap={3}>
                   {navItem.children.map((child) => (
-                    <DesktopSubNav _hover={{color:"purple"}} fontSize={"14px"} key={child.label} {...child} />
+                    <DesktopSubNav
+                      _hover={{ color: "purple" }}
+                      fontSize={"14px"}
+                      key={child.label}
+                      {...child}
+                    />
                   ))}
                 </Grid>
               </PopoverContent>
@@ -269,7 +271,11 @@ const DesktopSubNav = ({ label, subLabel }) => {
       <VStack>
         <GridItem>
           <Text transition={"all .3s ease"} fontWeight={500} p={4}>
-            {label == "ELITE OFFERS" ? <Link href="/offer" >label</Link> : label }
+            {label === "ELITE OFFERS" ? (
+              <Link href="/offer">label</Link>
+            ) : (
+              label
+            )}
           </Text>
           {subLabel.map((el) => (
             <Text fontSize={"sm"} key={el.id} m={3}>
@@ -314,7 +320,7 @@ const NAV_ITEMS = [
           { id: 10, key: "Contour" },
           { id: 11, key: "Setting Sprays & Fixers" },
           { id: 12, key: "Sindoor" },
-          { id: 13, key: "Makeup Remover" }
+          { id: 13, key: "Makeup Remover" },
         ],
         href: "#",
       },
@@ -371,30 +377,30 @@ const NAV_ITEMS = [
     label: "BRANDS",
     children: [],
   },
-  
+
   {
     label: "OFFERS",
     children: [],
   },
-  
+
   {
     label: "NEW",
     children: [],
   },
-  
+
   {
     label: "SPLURGE",
     children: [],
   },
-  
+
   {
     label: "MAGAXINE",
     children: [],
   },
-  
+
   {
     label: "ELITE OFFERS",
     children: [],
-    href:"/offer"
+    href: "/offer",
   },
 ];

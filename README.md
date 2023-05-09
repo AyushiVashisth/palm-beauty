@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+<h1 align="center">✨✨Welcome to Purple-clone✨✨</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center">💻Project Unique Name : Palm-beauty ✈️</h3>
 
-## Available Scripts
+<br />
+<h3 align="justify" width="80%">
+Purple is a company that provides comfort and wellness products such as mattresses, seat cushions, and pillows. They utilize innovative technology and scientific research to create products that offer the ultimate comfort and support.s.
+</h3>
+<br />
+### Deployed URL 👉 [Click here](gaping-meat-315-engagebay.netlify.app/)
+<br />
 
-In the project directory, you can run:
+<h2 align="left">
+        <img src="https://art.pixilart.com/486745d4bb1ef18.gif" width="20" height="20" align="center">
+        Languages and Tools
+        <img src="https://art.pixilart.com/486745d4bb1ef18.gif" width="20" height="20" align="center">
+</h2>
+<div align="center">
+        <div align="center">
+                <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"
+                        align="center" alt="html5">
+                <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"
+                        align="center" alt="css3">
+                <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"
+                        align="center" alt="javascript">
+                <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
+                        align="center" alt="reactjs" />
+                <img src="https://img.shields.io/badge/chakra ui-%234ED1C5.svg?style=for-the-badge&logo=chakraui&logoColor=white"
+                        align="center" alt="chakra-ui" />
+        </div>
+        <div align="center">
+                <h3 align="center">Tools</h3>
+                <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7"
+                        align="center" alt="git" />
+                <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=whit"
+                        align="center" alt="git" />
+                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+                        align="center" alt="github" />
+                <img src="https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white"
+                        align="center" alt="npm">
+                <img src="https://img.shields.io/badge/Visual%20Studio-5C2D91.svg?style=for-the-badge&logo=visual-studio&logoColor=white"
+                        align="center" alt="vscode" />
+        </div>
+</div>
 
-### `npm start`
+<div align="center">
+        <h3 align="center">Deployed On:</h3>
+        <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white"
+                alt="vercel" />
+        <img src="https://img.shields.io/badge/cyclic-5458F6?style=for-the-badge&logo=cyclic&logoColor=white"
+                alt="cyclic" />
+</div>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Features
 
-### `npm test`
+- Account creation, login, signup and logout functionality.
+- Sign-up and log-in validations.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![Screenshot-2023-05-09-171259.png](https://i.postimg.cc/PfVdYFb7/Screenshot-2023-05-09-171259.png)](https://postimg.cc/146xZBj0)
 
-### `npm run build`
+[![Screenshot-2023-05-09-171312.png](https://i.postimg.cc/sxk8KSgM/Screenshot-2023-05-09-171312.png)](https://postimg.cc/H8tBkr5m)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[url=https://postimg.cc/Z0FW5893][img]https://i.postimg.cc/Z0FW5893/Screenshot-2023-05-09-171349.png[/img][/url]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[![Screenshot-2023-05-09-171427.png](https://i.postimg.cc/G2GKxf61/Screenshot-2023-05-09-171427.png)](https://postimg.cc/YG2QpdpX)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Languages Used :
 
-### `npm run eject`
+<ul dir="auto">
+        <ol dir="auto">◉ JavaScript : 93.1%</ol>
+        <ol dir="auto">◉ HTML : 1.5%</ol>
+        <ol dir="auto">◉ CSS : 5.4%</ol>
+</ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### This report is provided by the Github language used stats. So, this is the total percentage of the coding languages.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br /><br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Installing :
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repository to your local machine
+2. Navigate to the project directory
+3. Run `npm install` to install the required dependencies
+4. Run `npm start` to start the development server
 
-## Learn More
+<br /><br />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### This is a collaborative project built by a individual and executed in 5 days.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br /><br />
 
-### Code Splitting
+# Our Learnings :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+On this journey we faced many issues, but we keep motivated each other with patience.
 
-### Analyzing the Bundle Size
+- We all learned how to read and understand the code of other team members.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- We learned how to write more efficient and clean code.
 
-### Making a Progressive Web App
+- Even though We also learned how to plan a project and how to execute it step by step.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- By this Project we have learned how to collaborate and communicate with team effectively and improving the
+  productivity.
 
-### Advanced Configuration
+- We also got a glimpse of using GitHub for the version control.
+  <br /><br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Contributing
 
-### Deployment
+### We welcome contributions to the Purple Clone website. If you have an idea for a new feature or have found a bug,
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+please
+open an issue in the repository.
 
-### `npm run build` fails to minify
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+<h1 align="center">✨Thank You✨</h1>

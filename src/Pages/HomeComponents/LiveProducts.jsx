@@ -49,7 +49,13 @@ const LiveProduct = ({ something, prodVal = 5 }) => {
             cursor="pointer"
             marginTop={"0px"}
           >
-            <Image h={"354px"} w={"100%"} textAlign={"center"} justifyContent={"center"} src={e.img} />
+            <Image
+              h={"354px"}
+              w={"100%"}
+              textAlign={"center"}
+              justifyContent={"center"}
+              src={e.img}
+            />
           </Box>
         ))}
       </Carousel>
