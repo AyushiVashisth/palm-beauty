@@ -1,5 +1,4 @@
 <h1 align="center">✨✨Welcome to Purple-clone✨✨</h1>
-
 <h3 align="center">💻Project Unique Name : Palm-beauty ✈️</h3>
 
 <br />
